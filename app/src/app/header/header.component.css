@@ -1,0 +1,39 @@
+.header{
+  background: #6f6f6f;
+  height: 100px;
+  width: 100%;
+}
+.unchangeable {
+  display: flex;
+}
+.imageHome{
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.txtAddress{
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+.imagePhone{
+  width: 27px;
+  height: 27px;
+  margin-left: 60px;
+  margin-top: 12px;
+}
+.txtPhoneNum{
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 15px;
+  margin-left: 5px;
+  /*font-weight: bold;*/
+}
+.verticalLine {
+  border-left: black thin solid;
+  margin-left: 10px;
+  height: 30px;
+  margin-top: 10px;
+}
+
