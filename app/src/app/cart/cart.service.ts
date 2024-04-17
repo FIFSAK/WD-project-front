@@ -37,8 +37,8 @@ export class Service {
     );
   }
 
-  getCartItems(): Observable<CartItemModel[]> {
-    return this.http.get<CartItemModel[]>(this.url, {headers: {Authorization: "Bearer {Token}"}}).pipe(
+  getCartItems(token: string): Observable<CartItemModel[]> {
+    return this.http.get<CartItemModel[]>(this.url, {headers: {Authorization: `Bearer ${token}`}}).pipe(
       catchError(error => {
         console.error('Error fetching vacancies', error);
         return throwError(error);
@@ -46,11 +46,11 @@ export class Service {
     );
   }
 
-  postCariItems(data: CartItemModel, clothes_id: number, size: string): Observable<CartItemModel> {
+  postCariItems(clothes_id: number, size: string, token: string): Observable<CartItemModel> {
     return this.http.post<CartItemModel>(this.url, {
       clothes_id: clothes_id,
       size: size
-    }, {headers: {Authorization: "Bearer {Token}"}}).pipe(
+    }, {headers: {Authorization: `Bearer ${token}`}}).pipe(
       catchError(error => {
         console.error('Error fetching vacancies', error);
         return throwError(error);
@@ -58,19 +58,19 @@ export class Service {
     );
   }
 
-  putCariItems(quantity: number, size: string, clothes_id: number): Observable<CartItemModel> {
-    return this.http.put<CartItemModel>(this.url + `/${clothes_id}`, {
+  putCariItem(quantity: number, size: string, cartItem_id: number, token: string): Observable<CartItemModel> {
+    return this.http.put<CartItemModel>(this.url + `/${cartItem_id}`, {
       quantity: quantity,
       size: size
-    }, {headers: {Authorization: "Bearer {Token}"}}).pipe(
+    }, {headers: {Authorization: `Bearer ${token}`}}).pipe(
       catchError(error => {
         console.error('Error fetching vacancies', error);
         return throwError(error);
       })
     );
   }
-  deleteCariItems(clothes_id: number): Observable<CartItemModel> {
-    return this.http.delete<CartItemModel>(this.url + `/${clothes_id}`, {headers: {Authorization: "Bearer {Token}"}}).pipe(
+  deleteCariItem(cartItem_id: number, token: string): Observable<CartItemModel> {
+    return this.http.delete<CartItemModel>(this.url + `/${cartItem_id}`, {headers: {Authorization: `Bearer ${token}`}}).pipe(
       catchError(error => {
         console.error('Error fetching vacancies', error);
         return throwError(error);
