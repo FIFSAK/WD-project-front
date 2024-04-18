@@ -15,10 +15,12 @@
   <div *ngFor="let item of cartItems" class="clothes-cart">
     <img [src]="item.clothes.image" class="image" alt="clothes image">
     <div class="clothes-info">
-      <h3>{{item.clothes.name}}</h3>
-      <p>Price: {{item.clothes.price}}</p>
-      <p>Quantity: {{item.quantity}}</p>
-      <button (click)="deleteCariItem(item.clothes.id)" class="btn btn-danger">Remove from cart</button>
+      <h3>{{ item.clothes.name }}</h3>
+      <p>Price: {{ item.clothes.price }}</p>
+      <p>Quantity: {{ item.quantity }}</p>
+      Sizes: <p *ngFor="let size of item.clothes.sizes">{{ size.size }}-{{ size.quantity }}</p>
+      <p>Vendor code: {{ item.clothes.vendor_code }}</p>
+      <button (click)="deleteCariItem(item.id)" class="btn btn-danger">Remove from cart</button>
     </div>
   </div>
 </div>
