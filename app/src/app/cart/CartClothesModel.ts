@@ -1,6 +1,6 @@
 export interface CartClothesModel {
   id: number;
-  imageUrl: string;
+  image: string;
   name: string;
   vendor_code: number;
   price: number;

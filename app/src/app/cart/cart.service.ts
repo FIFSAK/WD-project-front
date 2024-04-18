@@ -19,7 +19,7 @@ export class Service {
       password: password
     }).pipe(
       catchError(error => {
-        console.error('Error fetching vacancies', error);
+        console.error('login error', error);
         return throwError(error);
       })
     );
@@ -31,7 +31,7 @@ export class Service {
       password: password
     }).pipe(
       catchError(error => {
-        console.error('Error fetching vacancies', error);
+        console.error('Error register', error);
         return throwError(error);
       })
     );
@@ -40,7 +40,7 @@ export class Service {
   getCartItems(token: string): Observable<CartItemModel[]> {
     return this.http.get<CartItemModel[]>(this.url, {headers: {Authorization: `Bearer ${token}`}}).pipe(
       catchError(error => {
-        console.error('Error fetching vacancies', error);
+        console.error('Error fetching cartitems', error);
         return throwError(error);
       })
     );
@@ -52,7 +52,7 @@ export class Service {
       size: size
     }, {headers: {Authorization: `Bearer ${token}`}}).pipe(
       catchError(error => {
-        console.error('Error fetching vacancies', error);
+        console.error('Error post cartitems', error);
         return throwError(error);
       })
     );
@@ -64,7 +64,7 @@ export class Service {
       size: size
     }, {headers: {Authorization: `Bearer ${token}`}}).pipe(
       catchError(error => {
-        console.error('Error fetching vacancies', error);
+        console.error('Error update cartitems', error);
         return throwError(error);
       })
     );
@@ -72,7 +72,7 @@ export class Service {
   deleteCariItem(cartItem_id: number, token: string): Observable<CartItemModel> {
     return this.http.delete<CartItemModel>(this.url + `/${cartItem_id}`, {headers: {Authorization: `Bearer ${token}`}}).pipe(
       catchError(error => {
-        console.error('Error fetching vacancies', error);
+        console.error('Error deleting cartitems', error);
         return throwError(error);
       })
     );

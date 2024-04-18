@@ -1,18 +1,24 @@
-<div>
-  <form>
+<div *ngIf="!access_token">
+  <h1>Not Logged In</h1>
+  <form (ngSubmit)="login(loginInput, passwordInput)">
     <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-             placeholder="Enter email">
-      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      <input type="email" class="form-control" [(ngModel)]="loginInput" name="login" placeholder="Enter login">
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      <input type="password" class="form-control" [(ngModel)]="passwordInput" name="password" placeholder="Password">
     </div>
-    <div class="form-group form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
+</div>
+<div *ngIf="access_token">
+  <h1>Logged In - Cart Items</h1>
+  <div *ngFor="let item of cartItems" class="clothes-cart">
+    <img [src]="item.clothes.image" class="image" alt="clothes image">
+    <div class="clothes-info">
+      <h3>{{item.clothes.name}}</h3>
+      <p>Price: {{item.clothes.price}}</p>
+      <p>Quantity: {{item.quantity}}</p>
+      <button (click)="deleteCariItem(item.clothes.id)" class="btn btn-danger">Remove from cart</button>
+    </div>
+  </div>
 </div>
