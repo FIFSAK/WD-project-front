@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CartItemModel} from './cartItemModel';
 import {Service} from './cart.service';
-import {error} from "@angular/compiler-cli/src/transformers/util";
 
 @Component({
   selector: 'app-cart',
@@ -14,6 +13,7 @@ export class CartComponent {
   refresh_token: string = '';
   loginInput: string = '';
   passwordInput: string = '';
+  image_index: number = 0;
 
   constructor(private service: Service) {
   }
@@ -55,6 +55,10 @@ export class CartComponent {
     });
   }
 
+  changeImage(direction: number): void {
+    this.image_index += direction;
+    console.log('Image index:', this.image_index);
+  }
 
 
   postCariItems(clothes_id: number, size: string): void {
@@ -111,4 +115,6 @@ export class CartComponent {
     const sizeOption = sizes.find(size => size.size === selectedSize);
     return [...Array(sizeOption.quantity + 1).keys()].slice(1); // Create an array from 1 to quantity
   }
+
+  protected readonly length = length;
 }

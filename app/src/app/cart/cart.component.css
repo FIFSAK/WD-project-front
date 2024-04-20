@@ -13,6 +13,38 @@
   width: 300px;
   margin-right: 40px;
 }
+.image-container {
+  position: relative;
+  width: 300px;
+  height: auto;
+}
+
+.arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  color: #333;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 10;
+}
+
+.arrow-btn.left {
+  left: 0;
+}
+
+.arrow-btn.right {
+  right: 0;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 /* General Styles for the Cart Area */
 /*.clothes-cart {*/
 /*  display: flex;*/

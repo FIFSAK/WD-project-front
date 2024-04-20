@@ -3,9 +3,13 @@ interface Size {
   quantity: number;
 }
 
+interface Image {
+  image: string;
+}
+
 export interface CartClothesModel {
   id: number;
-  image: string;
+  images: Image[];
   name: string;
   vendor_code: number;
   price: number;
