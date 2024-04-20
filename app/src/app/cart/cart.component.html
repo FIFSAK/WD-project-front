@@ -1,1 +1,50 @@
-<p>cart works!</p>
+<div *ngIf="!access_token">
+  <h1>Not Logged In</h1>
+  <form (ngSubmit)="login(loginInput, passwordInput)">
+    <div class="form-group">
+      <input type="email" class="form-control" [(ngModel)]="loginInput" name="login" placeholder="Enter login">
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" [(ngModel)]="passwordInput" name="password" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<div *ngIf="access_token">
+  <h1>Logged In - Cart Items</h1>
+  <div *ngFor="let item of cartItems; let i = index" class="clothes-cart">
+    <div class="image-container">
+      <div *ngIf="image_index==0">
+        <img [src]="item.clothes.images[image_index].image" class="image" alt="clothes image">
+        <button class="arrow-btn right" (click)="changeImage(1)">&#10095;</button>
+      </div>
+      <div *ngIf="image_index>=item.clothes.images.length-1">
+        <button class="arrow-btn left" (click)="changeImage(-1)">&#10094;</button>
+        <img [src]="item.clothes.images[image_index].image" class="image" alt="clothes image">
+      </div>
+      <div *ngIf="image_index==0 && image_index>=item.clothes.images.length">
+        <button class="arrow-btn left" (click)="changeImage(-1)">&#10094;</button>
+        <img [src]="item.clothes.images[image_index].image" class="image" alt="clothes image">
+        <button class="arrow-btn right" (click)="changeImage(1)">&#10095;</button>
+      </div>
+    </div>
+    <div class="clothes-info">
+      <h3>{{ item.clothes.name }}</h3>
+      <p>Price: {{ item.clothes.price }}</p>
+      <p>
+        <select [(ngModel)]="item.size" (change)="updateCartItemSize(item, item.size)">
+          <option *ngFor="let size of item.clothes.sizes" [value]="size.size">{{size.size}}</option>
+        </select>
+        Quantity:
+        <select [(ngModel)]="item.quantity" (change)="updateCartItemQuantity(item, item.quantity)">
+          <option *ngFor="let qty of getAvailableQuantities(item.size, item.clothes.sizes)" [value]="qty">{{qty}}</option>
+        </select>
+      </p>
+      <p>Vendor code: {{ item.clothes.vendor_code }}</p>
+      <button (click)="deleteCariItem(item.id)" class="btn btn-danger">Remove from cart</button>
+    </div>
+  </div>
+</div>
+
+
+
