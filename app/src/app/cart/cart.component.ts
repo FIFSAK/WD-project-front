@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CartItemModel} from './cartItemModel';
 import {Service} from './cart.service';
+import {error} from "@angular/compiler-cli/src/transformers/util";
 
 @Component({
   selector: 'app-cart',
@@ -61,20 +62,43 @@ export class CartComponent {
     this.service.postCariItems(clothes_id, size, this.access_token).subscribe();
   }
 
-  putCartItem(cariItem_id: number, size: string, quantity: number = 1): void {
-    if (!this.access_token) return;
-    this.service.putCariItem(quantity, size, cariItem_id, this.access_token).subscribe();
+  putCartItem(cartItem_id: number, size: string, quantity: number = 1): void {
+    if (!this.access_token) {
+      console.error('No access token available.');
+      return;
+    }
+
+    this.service.putCariItem(quantity, size, cartItem_id, this.access_token).subscribe({
+      next: (data) => {
+        console.log('Update successful:', data);
+      },
+      error: (error) => {
+        // Check if the error object has an error field and it contains an array
+        if (error.error instanceof Array) {
+          console.error('Error updating cart item:', error.error.join(', '));
+          alert(error.error.join(', '))
+        } else if (typeof error.error === 'string') {
+          console.error('Error updating cart item:', error.error);
+        } else {
+          console.error('Error updating cart item:', error.message);
+        }
+        document.location.reload();
+      }
+    });
   }
+
 
   deleteCariItem(cariItem_id: number): void {
     if (!this.access_token) return;
     this.service.deleteCariItem(cariItem_id, this.access_token).subscribe();
+    document.location.reload();
   }
 
   updateCartItemSize(item: CartItemModel, newSize: string): void {
     // Logic to handle updating the size
     console.log(`Updated size to ${newSize}`);
     this.putCartItem(item.id, newSize, item.quantity);
+
   }
 
   updateCartItemQuantity(item: CartItemModel, newQuantity: number): void {
