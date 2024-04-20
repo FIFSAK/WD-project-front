@@ -59,7 +59,7 @@ export class Service {
   }
 
   putCariItem(quantity: number, size: string, cartItem_id: number, token: string): Observable<CartItemModel> {
-    return this.http.put<CartItemModel>(this.url + `/${cartItem_id}`, {
+    return this.http.put<CartItemModel>(this.url + `/${cartItem_id}/`, {
       quantity: quantity,
       size: size
     }, {headers: {Authorization: `Bearer ${token}`}}).pipe(

@@ -12,15 +12,23 @@
 </div>
 <div *ngIf="access_token">
   <h1>Logged In - Cart Items</h1>
-  <div *ngFor="let item of cartItems" class="clothes-cart">
+  <div *ngFor="let item of cartItems; let i = index" class="clothes-cart">
     <img [src]="item.clothes.image" class="image" alt="clothes image">
     <div class="clothes-info">
       <h3>{{ item.clothes.name }}</h3>
       <p>Price: {{ item.clothes.price }}</p>
-      <p>Quantity: {{ item.quantity }}</p>
-      Sizes: <p *ngFor="let size of item.clothes.sizes">{{ size.size }}-{{ size.quantity }}</p>
+      <p>
+        <select [(ngModel)]="item.size" (change)="updateCartItemSize(item, item.size)">
+          <option *ngFor="let size of item.clothes.sizes" [value]="size.size">{{size.size}}</option>
+        </select>
+        Quantity:
+        <select [(ngModel)]="item.quantity" (change)="updateCartItemQuantity(item, item.quantity)">
+          <option *ngFor="let qty of getAvailableQuantities(item.size, item.clothes.sizes)" [value]="qty">{{qty}}</option>
+        </select>
+      </p>
       <p>Vendor code: {{ item.clothes.vendor_code }}</p>
       <button (click)="deleteCariItem(item.id)" class="btn btn-danger">Remove from cart</button>
     </div>
   </div>
 </div>
+

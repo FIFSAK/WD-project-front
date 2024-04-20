@@ -55,6 +55,7 @@ export class CartComponent {
   }
 
 
+
   postCariItems(clothes_id: number, size: string): void {
     if (!this.access_token) return;
     this.service.postCariItems(clothes_id, size, this.access_token).subscribe();
@@ -68,5 +69,22 @@ export class CartComponent {
   deleteCariItem(cariItem_id: number): void {
     if (!this.access_token) return;
     this.service.deleteCariItem(cariItem_id, this.access_token).subscribe();
+  }
+
+  updateCartItemSize(item: CartItemModel, newSize: string): void {
+    // Logic to handle updating the size
+    console.log(`Updated size to ${newSize}`);
+    this.putCartItem(item.id, newSize, item.quantity);
+  }
+
+  updateCartItemQuantity(item: CartItemModel, newQuantity: number): void {
+    // Logic to handle updating the quantity
+    console.log(`Updated quantity to ${newQuantity}`);
+    this.putCartItem(item.id, item.size, newQuantity);
+  }
+
+  getAvailableQuantities(selectedSize: string, sizes: any[]): number[] {
+    const sizeOption = sizes.find(size => size.size === selectedSize);
+    return [...Array(sizeOption.quantity + 1).keys()].slice(1); // Create an array from 1 to quantity
   }
 }
