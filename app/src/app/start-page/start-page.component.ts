@@ -12,7 +12,7 @@ export class StartPageComponent {
 
   constructor(private router: Router) {}
 
-  redirectToClothes() {
-    this.router.navigate(['/clothes']); // перенаправление на ClothesComponent
+  redirectToClothes(category: string) {
+    this.router.navigate(['/clothes', category]);
   }
 }
