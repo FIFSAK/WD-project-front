@@ -32,8 +32,72 @@
 }
 .verticalLine {
   border-left: black thin solid;
-  margin-left: 10px;
+  margin-left: 50px;
   height: 30px;
   margin-top: 10px;
 }
-
+.cart_btn{
+  display: flex;
+  margin-left: 50px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.imageCart{
+  width: 27px;
+  height: 27px;
+  /*margin-left: 60px;*/
+  margin-top: 9px;
+}
+.txtCart{
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 15px;
+  margin-left: 5px;
+  font-weight: bold;
+}
+.login_btn{
+  display: inline-block;
+  margin-left: 830px;
+  padding: 0px 10px;
+  margin-top: 5px;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+}
+.txtLogin{
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 15px;
+  margin-left: 5px;
+  font-weight: bold;
+}
+.register_btn{
+  display: inline-block;
+  margin-left: 10px;
+  padding: 0px 10px;
+  margin-top: 5px;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+}
+.txtRegister{
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 15px;
+  margin-left: 5px;
+  font-weight: bold;
+}
+.search_box{
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inputText{
+  height: 25px;
+  text-align: center;
+}
+.search_btn{
+  height: 30px;
+  background-color: #8e9093;
+  border-color: #8e9093;
+  margin-left: 5px;
+}

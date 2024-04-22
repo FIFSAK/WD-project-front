@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {Clothes} from "../start-page/models";
+import {StartPageService} from "../start-page/start-page.service";
 
 @Component({
   selector: 'app-header',
@@ -6,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+
 
 }

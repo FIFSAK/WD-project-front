@@ -7,13 +7,15 @@ import { CartComponent } from './cart/cart.component';
 import { StartPageComponent } from './start-page/start-page.component';
 import { HeaderComponent } from './header/header.component';
 import {NgOptimizedImage} from "@angular/common";
+import { ClothesComponent } from './clothes/clothes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CartComponent,
     StartPageComponent,
-    HeaderComponent
+    HeaderComponent,
+    ClothesComponent
   ],
   imports: [
     BrowserModule,
