@@ -23,10 +23,8 @@ import {FormsModule} from "@angular/forms";
   imports: [
     BrowserModule,
     AppRoutingModule,
-
-    NgOptimizedImage
+    NgOptimizedImage,
     FormsModule
-
   ],
   providers: [
     provideClientHydration(), [provideHttpClient(withFetch())]
