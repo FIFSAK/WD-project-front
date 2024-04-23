@@ -42,6 +42,7 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+  border-radius: 5px;
 }
 .imageCart{
   width: 27px;
@@ -63,6 +64,23 @@
   background-color: white;
   border: none;
   cursor: pointer;
+  border-radius: 5px;
+}
+.loggedInUser{
+  margin-left: 830px;
+  margin-top: 3px;
+  background-color: transparent;
+  font-size: 20px;
+  font-weight: bold;
+}
+.register_btn{
+  display: inline-block;
+  padding: 0px 10px;
+  margin-top: 5px;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
 }
 .txtLogin{
   font-family: "Segoe UI", system-ui, sans-serif;

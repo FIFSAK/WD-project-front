@@ -1,0 +1,26 @@
+<div *ngIf="!isLoggedIn; else loggedIn">
+  <h2>Login</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" id="username" [(ngModel)]="username" name="username" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" required>
+    </div>
+    <div class="submit_btn">
+      <button type="submit" class="btn btn-primary">Log In</button>
+    </div>
+  </form>
+
+  <div class="reg_btn">
+    <p>If you haven't registered yet: </p>
+    <button (click)="RegisterPage()">Register</button>
+  </div>
+</div>
+
+<ng-template #loggedIn>
+  <p>Welcome, {{ username }}!</p>
+  <button (click)="onLogout()">Log Out</button>
+</ng-template>
