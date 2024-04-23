@@ -11,6 +11,8 @@ import {NgOptimizedImage} from "@angular/common";
 import { ClothesComponent } from './clothes/clothes.component';
 import {provideHttpClient, withFetch} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import {FormsModule} from "@angular/forms";
     CartComponent,
     StartPageComponent,
     HeaderComponent,
-    ClothesComponent
+    ClothesComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

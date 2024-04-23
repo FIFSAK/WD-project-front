@@ -1,0 +1,35 @@
+.form-group{
+  font-size: 15px;
+  padding: 2px;
+}
+.form-group input{
+  margin-left: 10px;
+}
+.submit_btn{
+  margin-left: 100px;
+  margin-top: 5px;
+  font-weight: bold;
+
+}
+.submit_btn button{
+  width: 100px;
+  background-color: #930400;
+  font-size: 15px;
+  color: white;
+  border: #930400;
+  border-radius: 5px;
+}
+.reg_btn{
+  display: flex;
+  margin-top: 10px;
+}
+.reg_btn button{
+  height: 30px;
+  margin-top: 10px;
+  margin-left: 10px;
+  background-color: #000d93;
+  color: white;
+  font-size: 15px;
+  border: #000d93;
+  border-radius: 5px;
+}

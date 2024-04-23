@@ -6,19 +6,26 @@
       <p class="txtPhoneNum">8(777)7777777</p>
       <div class="verticalLine"></div>
 
-      <button class="cart_btn">
+      <button class="cart_btn" (click)="CartPage()">
         <img src="../../assets/img/cart.png" alt="cart-icon" class="imageCart">
         <p class="txtCart">CART</p>
       </button>
 
-      <button class="login_btn">
-        <p class="txtLogin">Login</p>
-      </button>
 
-      <button class="register_btn">
-        <p class="txtRegister">Register</p>
-      </button>
+    <button *ngIf="!isLoggedIn" class="login_btn" (click)="LoginPage()">
+      <p class="txtLogin">Login</p>
+    </button>
+    <div *ngIf="isLoggedIn" class="loggedInUser">
+      <p>{{ username }}</p>
+    </div>
+    <button *ngIf="!isLoggedIn" class="register_btn" (click)="RegisterPage()">
+      <p class="txtRegister">Register</p>
+    </button>
+    <button *ngIf="isLoggedIn" class="register_btn" (click)="onLogout()">
+      <p class="txtRegister">Logout</p>
+    </button>
   </div>
+
 
   <div class="search_box">
     <input class="inputText" type="text" placeholder="What do you look for...">

@@ -1,0 +1,20 @@
+.form-group{
+  padding: 2px;
+  font-size: 15px;
+}
+.form-group input{
+  margin-left: 10px;
+}
+.reg_btn{
+  margin-left: 100px;
+  margin-top: 5px;
+  font-weight: bold;
+}
+.reg_btn button{
+  width: 100px;
+  background-color: #930400;
+  font-size: 15px;
+  color: white;
+  border: #930400;
+  border-radius: 5px;
+}
