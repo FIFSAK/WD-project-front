@@ -1,0 +1,50 @@
+.sizes {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 1;
+  transition: transform 0.3s ease;
+  transform: translateY(5%);
+}
+
+.sizes.active {
+  transform: translateY(0);
+}
+
+.button-container.active {
+  margin-bottom: 50px;
+}
+
+.button-container {
+  position: relative;
+  margin-bottom: 10px;
+  margin-left: 20px;
+
+}
+
+h2{
+margin-left: 48%;
+}
+
+#price{
+  margin-top: 20px;
+}
+
+#search_button{
+  margin-top: 20px;
+  border-radius: 30px;
+}
+
+#cloth-button{
+  margin: 5px;
+  border-radius: 20px;
+  width: 100px;
+  height: 40px;
+}
+
+input{
+  border-radius: 40px;
+}
+
+
+

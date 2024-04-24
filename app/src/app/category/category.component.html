@@ -1,0 +1,23 @@
+<h2>Clothes</h2>
+<div class="clothing-types" *ngIf="types.length > 0 && sizes.length > 0">
+  <div *ngFor="let row of clothingRows">
+    <div *ngFor="let type of row" class="button-container" [class.active]="type === selectedType">
+
+    <button id = "cloth-button" (click)="toggleSizes(type)" [class.active]="type === selectedType">{{ type.name }}</button>
+      <div *ngIf="type === selectedType" class="sizes" [style.bottom.px]="buttonBottomPosition">
+        <h3>Size of {{ type.name }}</h3>
+        <form>
+          <div *ngFor="let size of sizes">
+            <input type="checkbox" [id]="size.name" [name]="size.name">
+            <label [for]="size.name">{{ size.name }}</label>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id = "price"><label>Price from <input type="number" name = "price"></label>
+  <label> to <input type="number" name = "price"></label></div>
+<button id = "search_button">Search</button>
