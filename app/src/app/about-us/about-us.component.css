@@ -1,0 +1,51 @@
+.add_img{
+  display: flex;
+  margin-top: 20px;
+  height: 320px;
+}
+
+.background{
+  height: 300px;
+  padding: 20px;
+  background-color: #6f6f6f;
+  border: none;
+  color: white;
+  display: flex;
+}
+.background h2{
+  font-size: 30px;
+  font-weight: bold;
+}
+.background ul{
+  font-size: 20px;
+}
+.background ul li {
+  margin-bottom: 5px;
+}
+
+.about_us {
+  width: 100%;
+}
+
+.verticalLine {
+  border-left: white thin solid;
+  margin-left: 70px;
+  height: 200px;
+  margin-top: 15px;
+}
+.network{
+  margin-left: 70px;
+}
+.network p{
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.site-icons{
+  width: 50px;
+  display: flex;
+  margin-left: 25px;
+}
+.site-icons img {
+  margin-right: 10px;
+}
