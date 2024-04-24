@@ -1,1 +1,19 @@
-<h3>Clothes</h3>
+<div class="container" *ngFor="let cloth of clothes">
+  <div class="product">
+    <div class="product-image">
+      <!-- Add navigation buttons -->
+      <button *ngIf="cloth.image_index > 0" (click)="changeImage(cloth, -1)">&#10094;</button>
+      <img [src]="cloth.images[cloth.image_index].image" alt="Image not available">
+      <button *ngIf="cloth.image_index < cloth.images.length - 1" (click)="changeImage(cloth, 1)">&#10095;</button>
+    </div>
+    <div class="product-details">
+      <div class="product-name">{{ cloth.name }}</div>
+      <div class="product-price">${{ cloth.price }}</div>
+      <div class="product-sizes">
+        <button class="size" *ngFor="let size of cloth.sizes" (click)="changeSize(cloth, size.size)">{{ size.size }}</button>
+        <div>Chosen Size for {{ cloth.name }}: {{ cloth.chosenSize }}</div>
+      </div>
+      <button (click)="addToCart(cloth.id, cloth.chosenSize)">Add to Cart</button>
+    </div>
+  </div>
+</div>
