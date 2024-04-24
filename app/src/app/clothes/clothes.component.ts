@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {ClothesModel} from "./clothesModel";
 import {ClothesService} from "./clothes.service";
 import {Service} from "../cart/cart.service";
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-clothes',
@@ -10,12 +11,18 @@ import {Service} from "../cart/cart.service";
 })
 export class ClothesComponent {
   clothes: ClothesModel[] = [];
-  filter: string = '';
+  filter: string = '/?';
+  category: string = '';
 
-  constructor(private clothesService: ClothesService, private cartService: Service) {
+  constructor(private clothesService: ClothesService, private cartService: Service, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
+    this.category = this.route.snapshot.paramMap.get('category') || '';
+    if (this.category !== '') {
+      this.filter += 'category=' + this.category;
+    }
+    console.log('Category:', this.category);
     this.clothesService.getClothes(this.filter).subscribe({
       next: (data: any) => {
         this.clothes = data.results.map((cloth: any) => ({
