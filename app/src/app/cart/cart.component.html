@@ -1,14 +1,6 @@
 <div *ngIf="!access_token">
-  <h1>Not Logged In</h1>
-  <form (ngSubmit)="login(loginInput, passwordInput)">
-    <div class="form-group">
-      <input type="email" class="form-control" [(ngModel)]="loginInput" name="login" placeholder="Enter login">
-    </div>
-    <div class="form-group">
-      <input type="password" class="form-control" [(ngModel)]="passwordInput" name="password" placeholder="Password">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+  <h1>you should login or register</h1>
+
 </div>
 <div *ngIf="access_token">
   <h1>Logged In - Cart Items</h1>

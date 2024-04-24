@@ -19,26 +19,11 @@ export class CartComponent {
   }
 
   ngOnInit() {
-    this.access_token = localStorage.getItem('access_token');
+    this.access_token = localStorage.getItem('accessToken');
+    console.log('Access token:', this.access_token)
     if (this.access_token) {
       this.getCartItems();
     }
-  }
-
-  login(username: string, password: string): void {
-    this.service.login(username, password).subscribe((data: any) => {
-      this.access_token = data.access;
-      this.refresh_token = data.refresh;
-      if (typeof this.access_token === "string") {
-        localStorage.setItem('access_token', this.access_token);
-      }
-      console.log(this.access_token);
-      this.getCartItems();
-    });
-  }
-
-  register(username: string, password: string): void {
-    this.service.register(username, password).subscribe();
   }
 
   getCartItems(): void {
@@ -50,7 +35,7 @@ export class CartComponent {
       },
       error: (error) => {
         console.error('Error fetching cart items:', error);
-        localStorage.removeItem("access_token")
+        localStorage.removeItem("accessToken")
       }
     });
   }

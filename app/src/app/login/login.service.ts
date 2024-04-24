@@ -40,7 +40,7 @@ export class LoginService {
   }
 
   logout(): void {
-    localStorage.removeItem('userToken');
+    localStorage.removeItem('accessToken');
     localStorage.removeItem('username');
   }
 
@@ -49,7 +49,7 @@ export class LoginService {
   }
 
   isLoggedIn(): boolean {
-    return !!localStorage.getItem('userToken');
+    return !!localStorage.getItem('accessToken');
   }
 
 
