@@ -12,6 +12,7 @@ export class StartPageComponent {
   constructor(private router: Router) {}
 
   redirectToClothes(category: string) {
+    console.log('Redirecting to clothes:', category);
     this.router.navigate(['/clothes', category]);
   }
 }
