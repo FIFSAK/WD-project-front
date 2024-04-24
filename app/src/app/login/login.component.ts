@@ -16,6 +16,17 @@ export class LoginComponent {
     this.isLoggedIn = this.loginService.isLoggedIn();
   }
 
+  ngOnInit(): void {
+    this.loginService.refreshToken().subscribe(
+      () => {
+        console.log('Tokens refreshed successfully');
+      },
+      error => {
+        console.error('Error refreshing tokens:', error);
+      }
+    );
+  }
+
   onSubmit(): void {
     this.loginService.login(this.username, this.password).subscribe(
       response => {

@@ -15,7 +15,8 @@ const routes: Routes = [
   { path: 'clothes/:category', component: ClothesComponent },
   { path: 'cart', component: CartComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent}
+  {path: 'register', component: RegisterComponent},
+  {path: 'home', component: StartPageComponent}
 
 ];
 
