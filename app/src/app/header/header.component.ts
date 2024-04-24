@@ -29,6 +29,9 @@ export class HeaderComponent {
     this.isLoggedIn = false;
     this.router.navigate(['/login']);
   }
+  HomePage(){
+    this.router.navigate(['/home']);
+  }
 
   CartPage(){
     this.router.navigate(['/cart']);
