@@ -20,7 +20,7 @@ export class LoginComponent {
   onSubmit(): void {
     this.loginService.login(this.username, this.password).subscribe(
       response => {
-        localStorage.setItem('userToken', response.access);
+        localStorage.setItem('accessToken', response.access);
         localStorage.setItem('username', this.username);
         this.isLoggedIn = true;
         this.router.navigate(['/']);
