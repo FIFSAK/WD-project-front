@@ -66,7 +66,7 @@
   height: 40px;
   width: 200px;
   display: inline-block;
-  margin-left: 350px;
+  /*margin-left: 350px;*/
   padding: 0px 10px;
   margin-top: 5px;
   background-color: white;
@@ -75,8 +75,8 @@
   border-radius: 5px;
 }
 .loggedInUser{
-  margin-left: 830px;
-  margin-top: 3px;
+  margin-left: 460px;
+  /*margin-top: 3px;*/
   background-color: transparent;
   font-size: 20px;
   font-weight: bold;
