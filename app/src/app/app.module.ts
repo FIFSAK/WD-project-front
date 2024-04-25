@@ -13,6 +13,7 @@ import {provideHttpClient, withFetch} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { RegisterComponent } from './register/register.component';
     HeaderComponent,
     ClothesComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
