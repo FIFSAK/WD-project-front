@@ -4,26 +4,22 @@
 </div>
 <div *ngIf="access_token">
   <h1>Logged In - Cart Items</h1>
-  <div *ngFor="let item of cartItems; let i = index" class="clothes-cart">
+  <div *ngFor="let item of cartItems" class="clothes-cart">
     <div class="image-container">
-      <div *ngIf="image_index==0">
-        <img [src]="item.clothes.images[image_index].image" class="image" alt="clothes image">
-        <button class="arrow-btn right" (click)="changeImage(1)">&#10095;</button>
-      </div>
-      <div *ngIf="image_index>=item.clothes.images.length-1">
-        <button class="arrow-btn left" (click)="changeImage(-1)">&#10094;</button>
-        <img [src]="item.clothes.images[image_index].image" class="image" alt="clothes image">
-      </div>
-      <div *ngIf="image_index==0 && image_index>=item.clothes.images.length">
-        <button class="arrow-btn left" (click)="changeImage(-1)">&#10094;</button>
-        <img [src]="item.clothes.images[image_index].image" class="image" alt="clothes image">
-        <button class="arrow-btn right" (click)="changeImage(1)">&#10095;</button>
-      </div>
+      <!-- Navigation Button: Left (visible if there are previous images) -->
+      <button *ngIf="item.image_index > 0" class="arrow-btn left" (click)="changeImage(-1, item)">&#10094;</button>
+
+      <!-- Image Display -->
+      <img [src]="item.clothes.images[item.image_index].image" class="image" alt="clothes image">
+
+      <!-- Navigation Button: Right (visible if there are more images) -->
+      <button *ngIf="item.image_index < item.clothes.images.length - 1" class="arrow-btn right" (click)="changeImage(1, item)">&#10095;</button>
     </div>
     <div class="clothes-info">
       <h3>{{ item.clothes.name }}</h3>
       <p>Price: {{ item.clothes.price }}</p>
       <p>
+        Size:
         <select [(ngModel)]="item.size" (change)="updateCartItemSize(item, item.size)">
           <option *ngFor="let size of item.clothes.sizes" [value]="size.size">{{size.size}}</option>
         </select>
