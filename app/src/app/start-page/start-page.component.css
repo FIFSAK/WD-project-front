@@ -4,14 +4,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 10px; /* Add some margin around each button */
+  margin: 10px;
 }
 
 .row {
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap to the next line */
-  justify-content: center; /* Center items horizontally */
-  align-items: center; /* Center items vertically */
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
-  max-width: 1200px; /* Set a max-width to prevent items from spreading too wide */
+  max-width: 1200px;
 }
