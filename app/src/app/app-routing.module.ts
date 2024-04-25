@@ -9,14 +9,14 @@ import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
 
 const routes: Routes = [
-  {path: '', redirectTo: '/start-page', pathMatch: 'full'},
-  {path: 'header', component: HeaderComponent},
-  {path: 'start-page', component: StartPageComponent},
+  // {path: '', redirectTo: '/start-page', pathMatch: 'full'},
+  // {path: 'header', component: HeaderComponent},
+  // {path: 'start-page', component: StartPageComponent},
   { path: 'clothes/:category', component: ClothesComponent },
   { path: 'cart', component: CartComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'home', component: StartPageComponent}
+  {path: '', component: StartPageComponent}
 
 ];
 

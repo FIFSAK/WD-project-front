@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {Clothes} from "../clothes/models";
 import {StartPageService} from "../start-page/start-page.service";
 import {Router} from "@angular/router";
 import {LoginService} from "../login/login.service";

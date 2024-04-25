@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {Clothes} from "../clothes/models";
 import {StartPageService} from "./start-page.service";
 import {Router} from "@angular/router";
 
@@ -13,6 +12,7 @@ export class StartPageComponent {
   constructor(private router: Router) {}
 
   redirectToClothes(category: string) {
+    console.log('Redirecting to clothes:', category);
     this.router.navigate(['/clothes', category]);
   }
 }

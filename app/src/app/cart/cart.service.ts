@@ -47,7 +47,7 @@ export class Service {
   }
 
   postCariItems(clothes_id: number, size: string, token: string): Observable<CartItemModel> {
-    return this.http.post<CartItemModel>(this.url, {
+    return this.http.post<CartItemModel>(this.url + "/", {
       clothes_id: clothes_id,
       size: size
     }, {headers: {Authorization: `Bearer ${token}`}}).pipe(

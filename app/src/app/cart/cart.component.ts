@@ -10,10 +10,6 @@ import {Service} from './cart.service';
 export class CartComponent {
   cartItems: CartItemModel[] = [];
   access_token: string | null = null;
-  refresh_token: string = '';
-  loginInput: string = '';
-  passwordInput: string = '';
-  image_index: number = 0;
 
   constructor(private service: Service) {
   }
@@ -30,19 +26,23 @@ export class CartComponent {
     if (!this.access_token) return;
     this.service.getCartItems(this.access_token).subscribe({
       next: (data: any) => {
-        this.cartItems = data.results;
+        this.cartItems = data.results.map((item: any) => ({
+          ...item,
+          image_index: 0 // Ensure image_index is set to 0 by default
+        }));
         console.log('Cart Items:', this.cartItems);
       },
       error: (error) => {
         console.error('Error fetching cart items:', error);
-        localStorage.removeItem("accessToken")
+        localStorage.removeItem("accessToken");
       }
     });
   }
 
-  changeImage(direction: number): void {
-    this.image_index += direction;
-    console.log('Image index:', this.image_index);
+
+  changeImage(direction: number, item: CartItemModel): void {
+    item.image_index += direction;
+    console.log('Image index:', item.image_index);
   }
 
 
@@ -101,5 +101,4 @@ export class CartComponent {
     return [...Array(sizeOption.quantity + 1).keys()].slice(1); // Create an array from 1 to quantity
   }
 
-  protected readonly length = length;
 }
