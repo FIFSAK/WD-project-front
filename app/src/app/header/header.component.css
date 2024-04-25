@@ -1,48 +1,56 @@
-.header{
+.header {
   background: #6f6f6f;
   height: 110px;
   width: 100%;
 }
-.home_btn{
+
+.home_btn {
   background-color: transparent;
   border: none;
   display: flex;
   cursor: pointer;
 }
+
 .unchangeable {
   display: flex;
 }
-.imageHome{
+
+.imageHome {
   width: 40px;
   height: 40px;
   margin-left: 10px;
   margin-top: 10px;
 }
-.txtAddress{
+
+.txtAddress {
   font-family: "Segoe UI", system-ui, sans-serif;
   font-size: 20px;
   font-weight: bold;
   margin-left: 5px;
 }
-.imagePhone{
+
+.imagePhone {
   width: 37px;
   height: 37px;
   margin-left: 70px;
   margin-top: 12px;
 }
-.txtPhoneNum{
+
+.txtPhoneNum {
   font-family: "Segoe UI", system-ui, sans-serif;
   font-size: 20px;
   margin-left: 5px;
   /*font-weight: bold;*/
 }
+
 .verticalLine {
   border-left: black thin solid;
   margin-left: 70px;
   height: 40px;
   margin-top: 15px;
 }
-.cart_btn{
+
+.cart_btn {
   display: flex;
   margin-left: 70px;
   background-color: transparent;
@@ -50,19 +58,22 @@
   cursor: pointer;
   border-radius: 5px;
 }
-.imageCart{
+
+.imageCart {
   width: 37px;
   height: 37px;
   /*margin-left: 60px;*/
   margin-top: 10px;
 }
-.txtCart{
+
+.txtCart {
   font-family: "Segoe UI", system-ui, sans-serif;
   font-size: 20px;
   margin-left: 10px;
   font-weight: bold;
 }
-.login_btn{
+
+.login_btn {
   height: 40px;
   width: 200px;
   display: inline-block;
@@ -76,15 +87,17 @@
   align-items: center;
   justify-content: center;
 }
-.loggedInUser{
-  margin-left: 450px;
+
+.loggedInUser {
+  margin-left: 350px;
   /*margin-top: 3px;*/
   background-color: transparent;
   color: white;
   font-size: 20px;
   font-weight: bold;
 }
-.register_btn{
+
+.register_btn {
   height: 40px;
   width: 200px;
   display: inline-block;
@@ -95,13 +108,15 @@
   cursor: pointer;
   border-radius: 5px;
 }
-.txtLogin{
+
+.txtLogin {
   font-family: "Segoe UI", system-ui, sans-serif;
   font-size: 15px;
   margin-left: 5px;
   font-weight: bold;
 }
-.register_btn{
+
+.register_btn {
   display: inline-block;
   margin-left: 10px;
   padding: 0px 10px;
@@ -110,23 +125,27 @@
   border: none;
   cursor: pointer;
 }
-.txtRegister{
+
+.txtRegister {
   font-family: "Segoe UI", system-ui, sans-serif;
   font-size: 15px;
   margin-left: 5px;
   font-weight: bold;
 }
-.search_box{
+
+.search_box {
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.inputText{
+
+.inputText {
   height: 25px;
   text-align: center;
 }
-.search_btn{
+
+.search_btn {
   height: 30px;
   background-color: #93463e;
   border-color: #93463e;
